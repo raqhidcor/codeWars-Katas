@@ -10,3 +10,16 @@
 
 // The resulting array shouldn't necessarily match anyone in the tests, a function just checks if the array is now wave sorted.
 
+function swap(arr, x, y){
+    let temp = arr[x];
+    arr[x] = arr[y];
+    arr[y] = temp;
+  }
+  
+  function waveSort(arr) {
+    arr.sort((a, b) => a-b);
+    for(let i = 0; i < arr.length-1; i += 2)
+      swap(arr, i, i + 1);
+  }
+
+//   You have passed all of the tests! :)
